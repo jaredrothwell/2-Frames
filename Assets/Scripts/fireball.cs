@@ -6,15 +6,7 @@ public class fireball : MonoBehaviour
 {
     public Transform pivot;
     public float spd = 10f;
-    public Vector3 destination;
     public bool isShooting = false;
-    public float speed = 1.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
