@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232655229}
   - component: {fileID: 1232655230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1426741278}
   - component: {fileID: 1426741277}
   - component: {fileID: 1426741276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,9 +212,9 @@ GameObject:
   - component: {fileID: 1769703127}
   - component: {fileID: 1769703126}
   - component: {fileID: 1077833582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,3 +312,4 @@ MonoBehaviour:
   fireballmax: 10
   currentNum: 0
   fireball: {fileID: 7143537608876617244, guid: 945516ea0a1171545bc3edc74f681ed1, type: 3}
+  spd: 3

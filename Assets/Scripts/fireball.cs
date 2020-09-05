@@ -16,4 +16,10 @@ public class fireball : MonoBehaviour
             transform.rotation = Quaternion.Euler(Vector3.forward);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Player")
+            Destroy(gameObject);
+    }
 }
