@@ -10,10 +10,22 @@ public class Attack : MonoBehaviour
     public int fireballmax = 8;
     public int currentNum = 0;
     public GameObject fireball;
+
+    private List<GameObject> fList = new List<GameObject>();
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0) && fList.Count > 0)
+        {
+            GameObject fire = fList[0];
+            fList.RemoveAt(0);
+            Rigidbody2D rb = fire.GetComponent<Rigidbody2D>();
+            rb.AddForce(Input.mousePosition.normalized * 1f, ForceMode2D.Impulse);
+            fireball f = fire.GetComponent<fireball>();
+            f.transform.parent = null;
+            f.isShooting = true;
+            currentNum--;
+        }
     }
     private void FixedUpdate()
     {
@@ -28,6 +40,7 @@ public class Attack : MonoBehaviour
                 fire.transform.SetParent(transform);
                 fire.GetComponent<fireball>().pivot = transform;
                 currentNum++;
+                fList.Add(fire);
             }
         }
     }

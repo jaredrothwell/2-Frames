@@ -6,16 +6,22 @@ public class fireball : MonoBehaviour
 {
     public Transform pivot;
     public float spd = 10f;
+    public Vector3 destination;
+    public bool isShooting = false;
+    public float speed = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(pivot.position, Vector3.forward, 20 * Time.deltaTime * spd);
-        transform.rotation = Quaternion.Euler(Vector3.forward);
+        if (!isShooting)
+        {
+            transform.RotateAround(pivot.position, Vector3.forward, 20 * Time.deltaTime * spd);
+            transform.rotation = Quaternion.Euler(Vector3.forward);
+        }
     }
 }
