@@ -7,6 +7,23 @@ public class fireball : MonoBehaviour
     public Transform pivot;
     public float spd = 10f;
     public bool isShooting = false;
+
+    public AudioClip sfxFire;
+    public AudioClip sfxFireThrown;
+
+    public void thrown()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = sfxFireThrown;
+        audio.Play();
+    }
+    private void Start()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = sfxFire;
+        audio.Play();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,4 +39,5 @@ public class fireball : MonoBehaviour
         if (collision.tag != "Player")
             Destroy(gameObject);
     }
+
 }

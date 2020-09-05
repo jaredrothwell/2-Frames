@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Transactions;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -12,6 +10,7 @@ public class Attack : MonoBehaviour
     public int currentNum = 0;
     public GameObject fireball;
     public float spd = 3f;
+
     private List<GameObject> fList = new List<GameObject>();
     // Update is called once per frame
     void Update()
@@ -29,6 +28,7 @@ public class Attack : MonoBehaviour
             fireball f = fire.GetComponent<fireball>();
             f.transform.parent = null;
             f.isShooting = true;
+            f.thrown();
             currentNum--;
         }
     }
