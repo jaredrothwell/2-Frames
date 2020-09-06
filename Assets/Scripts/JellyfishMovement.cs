@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JellyfishMovement : MonoBehaviour
 {
-    public float timer = 1.0f;
+    public float timer = 0.5f;
     public float currentTimer = 0.0f;
     public float spd = 1.0f;
 
@@ -22,7 +22,7 @@ public class JellyfishMovement : MonoBehaviour
         if (currentTimer >= timer)
         {
             currentTimer = 0.0f;
-            timer = Random.Range(1.0f, 10.0f);
+            timer = Random.Range(1.0f, 3.0f);
             v = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
         }
         rb.velocity = v * spd;
