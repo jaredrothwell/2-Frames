@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5163906075757287081}
   m_Layer: 8
   m_Name: fireball
-  m_TagString: Player
+  m_TagString: proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +101,14 @@ MonoBehaviour:
   pivot: {fileID: 7659122030766408363, guid: dd5e24e013c60bc4e87531492446f1dd, type: 3}
   spd: 10
   isShooting: 0
-  sfxFire: {fileID: 8300000, guid: bd2b08c00622b1a4bad705aef62e4409, type: 3}
-  sfxFireThrown: {fileID: 8300000, guid: 355ac7a01b2e8484eb0c07266803754c, type: 3}
+  sfxFire:
+  - {fileID: 8300000, guid: 76bc8038fd0f34b488a02ebfb7922461, type: 3}
+  - {fileID: 8300000, guid: d24b148e8878e2144afaaffe2499038d, type: 3}
+  - {fileID: 8300000, guid: bd2b08c00622b1a4bad705aef62e4409, type: 3}
+  sfxFireThrown:
+  - {fileID: 8300000, guid: b3fcce53202e05d4e81bd87a031b0a15, type: 3}
+  - {fileID: 8300000, guid: 355ac7a01b2e8484eb0c07266803754c, type: 3}
+  sfxEnemyDeath: {fileID: 8300000, guid: 5ce75bcbb53422e4387c7a5367df5e1a, type: 3}
 --- !u!50 &2317931649459758326
 Rigidbody2D:
   serializedVersion: 4
@@ -160,7 +166,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 355ac7a01b2e8484eb0c07266803754c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

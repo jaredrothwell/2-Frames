@@ -8,20 +8,24 @@ public class fireball : MonoBehaviour
     public float spd = 10f;
     public bool isShooting = false;
 
-    public AudioClip sfxFire;
-    public AudioClip sfxFireThrown;
+    public List<AudioClip> sfxFire;
+    public List<AudioClip> sfxFireThrown;
+    public AudioClip sfxEnemyDeath;
 
     public void thrown()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.clip = sfxFireThrown;
-        audio.Play();
+        //AudioSource audio = GetComponent<AudioSource>();
+        //audio.clip = sfxFireThrown;
+        //audio.Play();
+        int i = Random.Range(0, sfxFireThrown.Count);
+        Transform cam = GameObject.Find("Main Camera").transform;
+        AudioSource.PlayClipAtPoint(sfxFireThrown[i], cam.position);
     }
     private void Start()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.clip = sfxFire;
-        audio.Play();
+        int i = Random.Range(0, sfxFire.Count);
+        Transform cam = GameObject.Find("Main Camera").transform;
+        AudioSource.PlayClipAtPoint(sfxFire[i], cam.position);
     }
 
     // Update is called once per frame
@@ -36,8 +40,16 @@ public class fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player")
+        if(collision.tag == "Enemy")
+        {
+            Transform cam = GameObject.Find("Main Camera").transform;
+            AudioSource.PlayClipAtPoint(sfxEnemyDeath, cam.position);
+            Destroy(collision.gameObject);
             Destroy(gameObject);
+        }
+        if (collision.tag != "Player" && collision.tag != "proj")
+            Destroy(gameObject);
+        
     }
 
 }
