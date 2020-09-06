@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class HP : MonoBehaviour
 {
     public List<GameObject> hearts;
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,24 @@ public class HP : MonoBehaviour
     {
         Destroy(hearts[0]);
         hearts.RemoveAt(0);
-        if(hearts.Count == 0)
+        StartCoroutine(StartFade(audioSource1, 1.0f, 0.0f));
+        StartCoroutine(StartFade(audioSource2, 1.0f, 1.0f));
+        if (hearts.Count == 0)
         {
             SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         }
+    }
+    public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 }

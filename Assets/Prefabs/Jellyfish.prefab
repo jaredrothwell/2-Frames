@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spr1: {fileID: 21300000, guid: 8b51bd16d3269cf41806310065af23f0, type: 3}
-  spr2: {fileID: 21300000, guid: 53dbdb7a02449c546b810b9cbb6335d4, type: 3}
+  spr2: {fileID: 21300000, guid: ec12b4868af4eda4c930462497c25063, type: 3}
   timer: 0.54
   current: 0
 --- !u!114 &2329808239697562867

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2317931649459758326}
   - component: {fileID: 1188046752164028498}
   - component: {fileID: 5163906075757287081}
+  - component: {fileID: -5713676958481751013}
   m_Layer: 8
   m_Name: fireball
   m_TagString: proj
@@ -253,3 +254,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5713676958481751013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143537608876617244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25c35561bfc8dc4192337319d0ce226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spr1: {fileID: 21300000, guid: eeb2ed5b1f767b3438379110c9d44e63, type: 3}
+  spr2: {fileID: 21300000, guid: ce1402c35396169479cef6c82ab82460, type: 3}
+  timer: 0.27
+  current: 0
