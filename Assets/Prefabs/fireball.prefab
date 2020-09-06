@@ -109,6 +109,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b3fcce53202e05d4e81bd87a031b0a15, type: 3}
   - {fileID: 8300000, guid: 355ac7a01b2e8484eb0c07266803754c, type: 3}
   sfxEnemyDeath: {fileID: 8300000, guid: 5ce75bcbb53422e4387c7a5367df5e1a, type: 3}
+  num1: {fileID: 6940859505627299650, guid: 0a3fbf9d6f8d2264ca00fba21ee0753a, type: 3}
 --- !u!50 &2317931649459758326
 Rigidbody2D:
   serializedVersion: 4

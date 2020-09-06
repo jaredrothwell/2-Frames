@@ -12,6 +12,7 @@ public class fireball : MonoBehaviour
     public List<AudioClip> sfxFireThrown;
     public AudioClip sfxEnemyDeath;
 
+    public GameObject num1;
     public void thrown()
     {
         //AudioSource audio = GetComponent<AudioSource>();
@@ -44,8 +45,11 @@ public class fireball : MonoBehaviour
         {
             Transform cam = GameObject.Find("Main Camera").transform;
             AudioSource.PlayClipAtPoint(sfxEnemyDeath, cam.position);
+            Instantiate(num1, collision.transform.position, collision.transform.rotation);
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            GameObject score = GameObject.Find("Score");
+            score.GetComponent<Score>().addScore(100);
         }
         if (collision.tag != "Player" && collision.tag != "proj")
             Destroy(gameObject);
