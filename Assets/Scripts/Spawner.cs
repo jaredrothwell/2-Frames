@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     public float timer = 1.0f;
     public float currentTimer = 0.0f;
     public GameObject enemy;
+    public List<Transform> tList;
 
     // Update is called once per frame
     void Update()
@@ -16,7 +17,8 @@ public class Spawner : MonoBehaviour
         {
             currentTimer = 0.0f;
             GameObject e = Instantiate(enemy);
-            e.transform.position = transform.position;
+            int i = Random.Range(0, tList.Count);
+            e.transform.position = tList[i].position;
         }
 
     }

@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     public int health = 3;
     public float spd = 10.0f;
+    public GameObject hp;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +44,6 @@ public class Movement : MonoBehaviour
     public void damage(int dmg)
     {
         health -= dmg;
+        hp.GetComponent<HP>().takeDamge();
     }
 }
