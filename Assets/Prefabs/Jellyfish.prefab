@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 2001760685}
   - component: {fileID: 2001760684}
   - component: {fileID: 2001760686}
+  - component: {fileID: 986575712}
   m_Layer: 0
   m_Name: Jellyfish
   m_TagString: Enemy
@@ -296,4 +297,19 @@ MonoBehaviour:
   timer: 1.08
   current: 0
   electric: {fileID: 8023748905662554517, guid: 43f4236ffdd21334f82a34e116b1628a, type: 3}
+  spd: 1
+--- !u!114 &986575712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329808240214795854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615de79810db3164981cdf50afd12efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1
+  currentTimer: 0
   spd: 1

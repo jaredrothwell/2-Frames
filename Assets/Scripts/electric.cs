@@ -5,6 +5,7 @@ using UnityEngine;
 public class electric : MonoBehaviour
 {
     public AudioClip sfxElectric;
+    public List<AudioClip> sfxHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,9 @@ public class electric : MonoBehaviour
         else if (collision.tag == "Player")
         {
             Destroy(gameObject);
+            int i = Random.Range(0, sfxHit.Count);
+            Transform cam = GameObject.Find("Main Camera").transform;
+            AudioSource.PlayClipAtPoint(sfxHit[i], cam.position);
             collision.GetComponent<Movement>().damage(1);
         }
 

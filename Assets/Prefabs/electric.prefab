@@ -146,6 +146,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxElectric: {fileID: 8300000, guid: 106980fd96f9f8e4c94fabcdaaee912b, type: 3}
+  sfxHit:
+  - {fileID: 8300000, guid: ff9d47cad3ae68648adf0a99c6ed5165, type: 3}
+  - {fileID: 8300000, guid: 7bb151bd6ab214a4d88438717db05776, type: 3}
+  - {fileID: 8300000, guid: cb06118714f75b84a8349e01ae8aedb9, type: 3}
+  - {fileID: 8300000, guid: 41e2c0bcb77c48940a79ca8a373544e6, type: 3}
 --- !u!82 &-537953307547229995
 AudioSource:
   m_ObjectHideFlags: 0
