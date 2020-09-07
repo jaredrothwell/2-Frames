@@ -42,6 +42,7 @@ public class Spawner : MonoBehaviour
         {
             currentTimer2 = 0.0f;
             numOfEnemies++;
+            timerEnemies *= 2;
         }
 
     }

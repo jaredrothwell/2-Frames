@@ -11,4 +11,8 @@ public class Mouse : MonoBehaviour
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
+    private void Update()
+    {
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
 }
