@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public int health = 3;
     public float spd = 10.0f;
     public GameObject hp;
+    public float iframes = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +40,20 @@ public class Movement : MonoBehaviour
         Vector2 movement = new Vector2(horizontal, vertical);
 
         rb.velocity = movement.normalized * spd;
+        iframes -= Time.deltaTime;
+        if(iframes < 0.0f)
+        {
+            iframes = 0.0f;
+        }
     }
 
     public void damage(int dmg)
     {
-        health -= dmg;
-        hp.GetComponent<HP>().takeDamge();
+        if (iframes <= 0.0f)
+        {
+            health -= dmg;
+            hp.GetComponent<HP>().takeDamge();
+            iframes = 1.0f;
+        }
     }
 }
