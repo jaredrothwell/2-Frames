@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public float timerMin = 2.0f;
     public float timer = 3.0f;
     public float currentTimer = 0.0f;
-    public GameObject enemy;
+    public List<GameObject> enemy;
     public List<Transform> tList;
     public int numOfEnemies = 3;
     public float timerEnemies = 20f;
@@ -24,8 +24,9 @@ public class Spawner : MonoBehaviour
             int y = Random.Range(1, numOfEnemies);
             while (y != 0)
             {
-                GameObject e = Instantiate(enemy);
-                int i = Random.Range(0, tList.Count);
+                int i = Random.Range(0, enemy.Count);
+                GameObject e = Instantiate(enemy[i]);
+                i = Random.Range(0, tList.Count);
                 e.transform.position = tList[i].position;
                 y--;
             }

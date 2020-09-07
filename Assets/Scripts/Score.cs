@@ -29,7 +29,8 @@ public class Score : MonoBehaviour
             currentTimer2 = 0.0f;
         }
         GameObject globalScore = GameObject.Find("GlobalScore");
-        globalScore.GetComponent<GlobalScore>().Score = score;
+        if(globalScore != null)
+            globalScore.GetComponent<GlobalScore>().Score = score;
     }
 
     public void addScore(int x)

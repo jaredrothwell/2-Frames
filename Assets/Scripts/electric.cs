@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class electric : MonoBehaviour
 {
-    public AudioClip sfxElectric;
+    public List<AudioClip> sfxElectric;
     public List<AudioClip> sfxHit;
     // Start is called before the first frame update
     void Start()
     {
         AudioSource audio = GetComponent<AudioSource>();
-        audio.clip = sfxElectric;
+        int i = Random.Range(0, sfxHit.Count);
+        audio.clip = sfxElectric[i];
         audio.Play();
     }
 

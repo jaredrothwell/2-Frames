@@ -17,6 +17,8 @@ public class ManageScores : MonoBehaviour
             HighScore.text = "HighScore:" + globalScore.GetComponent<GlobalScore>().HighScore;
             Score.text = "Score:" + globalScore.GetComponent<GlobalScore>().Score;
             Dead.text = "You Died";
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
         }
         else
         {
